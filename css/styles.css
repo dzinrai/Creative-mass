@@ -14,6 +14,7 @@ body,html{
 .container{
 	max-width:990px;
 	width:100%;
+	overflow: hidden;
 }
 .row{
 	margin: 0;
@@ -35,13 +36,36 @@ footer,
 	background: url(../images/sphere.png) 44% 0 no-repeat;
 	height: 340px;
 }
-@media (max-width: 992px){
+@media (max-width: 938px){
 	.container{
-		width:100%;
-		padding:0;
+		padding-right:0;
+		padding-left:0;
 	}
+	.page_main,.about_company,.contact_information{
+		padding-right: 15px !important;
+		padding-left: 15px !important;
+	}
+	.page_right
+	{
+		padding: 0 15px 0 30px !important;
+	}
+}
+@media (max-width: 768px){
+	.page_right,
+	.client_list{
+		padding: 0 15px 0 0 !important;
+	}	
+}
+
+@media (max-width: 992px){
+	
 	.latest_works{
 		padding:0 15px 0 15px !important;
+	}
+}
+@media (max-width: 1007px){
+	.client_list{
+		width:310px;
 	}
 }
 .page_top_logo h1{
@@ -168,6 +192,7 @@ footer,
 .big_works{
 	padding: 30px 29px 0 0;
 	min-width: 310px;
+	width: 320px;
 }
 .small_works{
 	padding: 30px 0 0 0;
@@ -185,19 +210,19 @@ footer,
 	}
 }
 .latest_works .slider{
-	border-top: 1px solid #000;
 	position: relative;
 }
-.slider:before {
+.latest_works_title{
+	border-bottom: 1px solid #000;
+}
+.latest_works_title::before {
   content: " ";
   position: absolute;
   z-index: 0;
-  width:100%;
-  top: 1px;
+  top: 30px;
   left: 0px;
   right: 0px;
-  bottom: 0px;
-  border-top: 1px solid #2f2f2f;
+  border-bottom: 1px solid #2f2f2f;
 }
 /*MAIN -> LEFT*/
 .page_left{
@@ -224,14 +249,7 @@ footer,
 }
 /*MAIN -> RIGHT*/
 .page_right{
-	float: right;
-	max-width:330px;
 	padding:0 0 0 30px;
-}
-@media (min-width: 1200px){
-	.page_right {
-	   width: 330px; 
-	}
 }
 .testimonials .title{
 	border-bottom: 1px solid #000;
@@ -333,7 +351,7 @@ footer,
 	float:left;
 	width:32px;
 	height:32px;
-	margin:0 20px 0 0;
+	margin:0 19px 20px 0;
 }
 .connect li:last-child{margin:0;}
 .connect li:nth-child(1){
@@ -374,9 +392,12 @@ footer,
 	padding:0;
 	max-width:630px;
 }
-.about_company .client_list,
+.about_company .client_list{
+	padding:0 0 0 30px;
+}
+
 .contact_information .contacts {
-	float: right;
+
 	max-width:330px;
 	padding:0 0 0 30px;
 }
@@ -515,31 +536,54 @@ footer,
 	position: absolute;
 	right:0;
 	top:0;
+
 	padding:5px;
 }
 .contact_information form input.btn{
-	width:75px;
-	height:30px;
-	left:215px;
 	position: relative;
-	background: url(../images/icons.png) -31px -32px no-repeat;
+	left:215px;
+	font-family: "Myriad Pro";
+	font-size: 1.1em;
+	padding: 0;
+	color: #fff;
+	text-shadow: 1px 1px rgba(0,0,0,.24);
+	width: 75px;
+	height: 30px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	border:none;
-	font-size: 0;
+	border-radius: 5px;
+	background-color: #000;
+	background-image: -webkit-linear-gradient(top, #c79200, #d85c1e);
+	background-image: -moz-linear-gradient(top, #c79200, #d85c1e);
+	background-image: -o-linear-gradient(top, #c79200, #d85c1e);
+	background-image: -ms-linear-gradient(top, #c79200, #d85c1e);
+	background-image: linear-gradient(to bottom, #c79200, #d85c1e);
+
 }
-
-
-@media (min-width: 1200px){
-	.about_company .client_list,
-	.contact_information .contacts {
-	   width: 330px; 
+@media (max-width: 768px){
+	.contact_information .form_wrap {
+		min-height: 380px
+	}
+	.contact_information form textarea{
+		left: 0;
+		top:150px;
+	}
+	.contact_information form input.btn{
+		top:340px;
+		left: 0px;
+		position: absolute;
 	}
 }
-
+.contact_information .contacts {
+	min-width: 330px; 
+	width: 330px; 
+}
 .i_img{
 	float:left;
 	width:31px;
 	height:31px;
-	background: url(../images/icons.png) -106px -32px no-repeat;
+	background: url(../images/icons.png) -31px -32px no-repeat;
 	margin: 0 5px 0 0;
 }
 .adress,.contacts_text,.copy{
